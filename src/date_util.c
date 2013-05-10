@@ -1,25 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
-typedef struct {
-	int day;
-	int month;
-	int year;
-} date;
-
-struct _date_interval {
-	date *start_date;
-	date *end_date;
-};
-
-typedef struct _date_interval date_interval;
-
-struct _interval_list {
-	date_interval *val;
-	struct _interval_list *next;
-};
-
-typedef struct _interval_list interval_list;
+#include "date_util.h"
 
 int date_compare(date *d1, date *d2) {
 	if (d1->year > d2->year) {
@@ -39,6 +20,7 @@ int date_compare(date *d1, date *d2) {
 		return 0;/* equal */
 	}
 }
+
 
 int merge_interval(interval_list *list, date_interval *new_interval) {
 	interval_list *current_interval;

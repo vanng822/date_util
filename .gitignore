@@ -1,4 +1,4 @@
-date_util*
+date_util.egg*
 build*
 .project
 *.so
