@@ -1,3 +1,6 @@
+#ifndef DATE_UTIL_H
+#define DATE_UTIL_H
+
 
 typedef struct {
 	int day;
@@ -18,3 +21,6 @@ struct _interval_list {
 };
 
 typedef struct _interval_list interval_list;
+
+
+#endif
