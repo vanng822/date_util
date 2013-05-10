@@ -2,7 +2,7 @@ language: python
 python:
   - "2.7"
 before_install:
-  - sudo apt-get install cunit
+  - sudo apt-get install libcunit1 libcunit1-dev
 script:
   - python setup.py test
   - make test
