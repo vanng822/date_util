@@ -12,9 +12,9 @@ functionalities for date and date interval
 http://www.virtualenv.org/en/latest/
 	
 ### cunit, mac or ubuntu
-http://cunit.sourceforge.net/contact.html
 	sudo port install cunit
 	sudo apt-get install libcunit1 libcunit1-dev
+
 
 ### virtualenv python2.7
 	virtualenv --python=/usr/bin/python2.7 python2.7
@@ -26,3 +26,10 @@ http://cunit.sourceforge.net/contact.html
 
 ### c test
 	make test
+
+## Resources
+### CUnit doc
+http://cunit.sourceforge.net/contact.html
+
+### Python c-api
+http://docs.python.org/2/c-api/index.html
