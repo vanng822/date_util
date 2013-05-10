@@ -85,6 +85,7 @@ create_date_interval(int y1, int m1, int d1, int y2, int m2, int d2) {
 	return one;
 }
 
+/*
 int main() {
 	printf("running main\n");
 	interval_list *list = malloc(sizeof(interval_list));
@@ -132,4 +133,4 @@ int main() {
 	}
 	return 0;
 }
-
+*/

@@ -1,4 +1,8 @@
 language: python
 python:
   - "2.7"
-script: python setup.py test
+before_install:
+  - sudo apt-get install cunit
+script:
+  - python setup.py test
+  - make test

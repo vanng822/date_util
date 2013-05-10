@@ -2,3 +2,5 @@ date_util*
 build*
 .project
 *.so
+*.pyc
+python2.7
