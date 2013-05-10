@@ -29,7 +29,14 @@ http://www.virtualenv.org/en/latest/
 
 ## Resources
 ### CUnit doc
-http://cunit.sourceforge.net/contact.html
+http://cunit.sourceforge.net/
 
 ### Python c-api
 http://docs.python.org/2/c-api/index.html
+
+### C
+http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html
+http://www.acm.uiuc.edu/webmonkeys/book/c_guide/
+http://www.cplusplus.com/reference/
+http://www.crasseux.com/books/ctutorial/
+http://gcc.gnu.org/
