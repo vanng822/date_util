@@ -21,6 +21,21 @@ int date_compare(date *d1, date *d2) {
 	}
 }
 
+void free_date_interval(date_interval *interval) {
+	free(interval->end_date);
+	free(interval->start_date);
+	free(interval);
+}
+
+void free_interval_list(interval_list *list) {
+	interval_list *tmp;
+	while (list) {
+		tmp = list;
+		list = list->next;
+		free_date_interval(tmp->val);
+		free(tmp);
+	}
+}
 
 int merge_interval(interval_list *list, date_interval *new_interval) {
 	interval_list *current_interval;
@@ -35,7 +50,8 @@ int merge_interval(interval_list *list, date_interval *new_interval) {
 		new_list = malloc(sizeof(interval_list));
 
 		int result;
-		result = date_compare(current_interval->val->start_date, new_interval->start_date);
+		result = date_compare(current_interval->val->start_date,
+				new_interval->start_date);
 		if (result == -1) {
 			printf("Less\n");
 		} else if (result == 0) {
@@ -68,51 +84,41 @@ create_date_interval(int y1, int m1, int d1, int y2, int m2, int d2) {
 }
 
 /*
-int main() {
-	printf("running main\n");
-	interval_list *list = malloc(sizeof(interval_list));
-	interval_list *head;
-	head = NULL;
-	list->val = create_date_interval(2013, 1, 20, 2013, 3, 20);
-	list->next = head;
-	head = list;
-	list = malloc(sizeof(interval_list));
-	list->val = create_date_interval(2013, 4, 22, 2013, 5, 20);
-	list->next = head;
-	head = list;
-	list = malloc(sizeof(interval_list));
-	list->val = create_date_interval(2013, 5, 21, 2013, 6, 20);
-	list->next = head;
-	head = list;
-	list = head;
+ int main() {
+ printf("running main\n");
+ interval_list *list = malloc(sizeof(interval_list));
+ interval_list *head;
+ head = NULL;
+ list->val = create_date_interval(2013, 1, 20, 2013, 3, 20);
+ list->next = head;
+ head = list;
+ list = malloc(sizeof(interval_list));
+ list->val = create_date_interval(2013, 4, 22, 2013, 5, 20);
+ list->next = head;
+ head = list;
+ list = malloc(sizeof(interval_list));
+ list->val = create_date_interval(2013, 5, 21, 2013, 6, 20);
+ list->next = head;
+ head = list;
+ list = head;
 
-	date_interval *new_int = malloc(sizeof(date_interval));
+ date_interval *new_int = malloc(sizeof(date_interval));
 
-	date *s = malloc(sizeof(date));
-	date *e = malloc(sizeof(date));
-	s->year = 2013;
-	s->month = 5;
-	s->day = 10;
-	e->year = 2013;
-	e->month = 7;
-	e->day = 10;
-	new_int->start_date = s;
-	new_int->end_date = e;
+ date *s = malloc(sizeof(date));
+ date *e = malloc(sizeof(date));
+ s->year = 2013;
+ s->month = 5;
+ s->day = 10;
+ e->year = 2013;
+ e->month = 7;
+ e->day = 10;
+ new_int->start_date = s;
+ new_int->end_date = e;
 
-	merge_interval(list, new_int);
+ merge_interval(list, new_int);
 
-	free(new_int->start_date);
-	free(new_int->end_date);
-	free(new_int);
-	interval_list *current;
-	while(list) {
-		current = list;
-		list = list->next;
-		free(current->val->end_date);
-		free(current->val->start_date);
-		free(current->val);
-		free(current);
-	}
-	return 0;
-}
-*/
+free_date_interval(new_int);
+free_interval_list(list);
+ return 0;
+ }*/
+
