@@ -27,6 +27,10 @@ http://www.virtualenv.org/en/latest/
 ### c test
 	make test
 
+## Memory leak check with valgrind
+	valgrind --leak-check=full make test
+	valgrind --leak-check=full python setup.py test
+
 ## Resources
 ### CUnit doc
 * http://cunit.sourceforge.net/
